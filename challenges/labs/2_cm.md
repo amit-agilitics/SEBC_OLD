@@ -33,24 +33,20 @@ gpgcheck = 1
 
 [root@ip-172-31-5-17 ~]# 
 
-
-````
-
-`````````
+```
 Prepare SCM Database command
-
+```
 root@ip-172-31-5-17 yum.repos.d]# /usr/share/cmf/schema/scm_prepare_database.sh mysql -h ip-172-31-5-18.ap-southeast-1.compute.internal -uroot@ip-172-31-5-18.ap-southeast-1.compute.internal -proot  --scm-host ip-172-31-5-17  scm scm scm
-``````
 JAVA_HOME=/usr/java/jdk1.7.0_67-cloudera
 Verifying that we can write to /etc/cloudera-scm-server
 Creating SCM configuration file in /etc/cloudera-scm-server
 Executing:  /usr/java/jdk1.7.0_67-cloudera/bin/java -cp /usr/share/java/mysql-connector-java.jar:/usr/share/java/oracle-connector-java.jar:/usr/share/cmf/schema/../lib/* com.cloudera.enterprise.dbutil.DbCommandExecutor /etc/cloudera-scm-server/db.properties com.cloudera.cmf.db.
 2016-12-09 03:04:14,668 [main] INFO  com.cloudera.enterprise.dbutil.DbCommandExecutor  - Successfully connected to database.
 All done, your SCM database is configured correctly
+```
 
-``````
+```
 tail -f /var/log/cloudera-scm-server/cloudera-scm-server.log
-
 
 rMapping: Mapped URL path [/reports/delete-configuration.*] onto handler 'utilizationReportsController'
 2016-12-09 03:06:04,279 INFO WebServerImpl:org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping: Mapped URL path [/reports/delete-configuration/] onto handler 'utilizationReportsController'
@@ -69,12 +65,11 @@ rMapping: Mapped URL path [/reports/delete-configuration.*] onto handler 'utiliz
 2016-12-09 03:06:06,429 INFO WebServerImpl:com.cloudera.server.cmf.WebServerImpl: Started Jetty server.
 2016-12-09 03:06:06,881 INFO SearchRepositoryManager-0:com.cloudera.server.web.cmf.search.components.SearchRepositoryManager: Finished constructing repo:2016-12-09T03:06:06.881Z
 
-`````
+```
 
-
+```
 grep "Started Jetty server" /var/log/cloudera-scm-server/cloudera-scm-server.log
 2016-12-09 03:06:06,429 INFO WebServerImpl:com.cloudera.server.cmf.WebServerImpl: Started Jetty server.
-
-``
+```
 
 
